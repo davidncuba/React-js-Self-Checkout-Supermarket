@@ -15,7 +15,16 @@ const Page = forwardRef<HTMLDivElement, Props>(
         <title>{`${title} | Checkout`}</title>
         {meta}
       </Helmet>
-      <Box ref={ref} {...other}>
+      <Box
+        ref={ref}
+        {...other}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+          background: "#f2f6fc",
+        }}
+      >
         {children}
       </Box>
     </>
