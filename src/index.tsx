@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
 const root = ReactDOM.createRoot(
@@ -8,6 +9,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <HelmetProvider>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </HelmetProvider>
 );

@@ -1,11 +1,12 @@
 import Page from "./components/Page";
 import { Container } from "@mui/material";
+import Router from "./routes";
 
 function App() {
   return (
     <Page title="Main">
       <Container maxWidth="lg">
-        <>Component</>
+        <Router />
       </Container>
     </Page>
   );
