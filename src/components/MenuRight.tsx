@@ -17,16 +17,24 @@ export default function MenuRight() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleOnClickProduct = React.useCallback(() => {
+    handleClose();
+    navigate("/product", { replace: true });
+  }, [navigate]);
 
-  const handleOnClickPrice = React.useCallback(() => {
+  const handleOnClickPricePromotions = React.useCallback(() => {
     handleClose();
     navigate("/price", { replace: true });
   }, [navigate]);
-  const handleOnClickPromotions = React.useCallback(() => {
-    handleClose();
-    navigate("/promotions", { replace: true });
-  }, [navigate]);
 
+  const handleOnClickCheckout = React.useCallback(() => {
+    handleClose();
+    navigate("/checkout", { replace: true });
+  }, [navigate]);
+  const handleOnClickHome = React.useCallback(() => {
+    handleClose();
+    navigate("/", { replace: true });
+  }, [navigate]);
   return (
     <Box sx={{ display: "flex", justifyContent: "right" }}>
       <Button
@@ -46,9 +54,15 @@ export default function MenuRight() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleOnClickPrice}>Price</MenuItem>
+        <MenuItem onClick={handleOnClickHome}>Home</MenuItem>
         <Divider />
-        <MenuItem onClick={handleOnClickPromotions}>Promotions</MenuItem>
+        <MenuItem onClick={handleOnClickCheckout}>Checkout</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleOnClickProduct}>Product</MenuItem>
+        <Divider />
+        <MenuItem onClick={handleOnClickPricePromotions}>
+          Price/Promotions
+        </MenuItem>
       </Menu>
     </Box>
   );

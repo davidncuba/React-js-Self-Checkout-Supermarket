@@ -1,0 +1,31 @@
+export const productsAPI = [
+  {
+    id: 1,
+    ean: 1,
+    name: "A",
+    price: 50,
+    qtd_promotion: 3,
+    price_promotion: 130,
+  },
+  {
+    id: 2,
+    ean: 2,
+    name: "B",
+    price: 30,
+    qtd_promotion: 2,
+    price_promotion: 45,
+  },
+  {
+    id: 3,
+    ean: 3,
+    name: "C",
+    price: 20,
+    qtd_promotion: 5,
+    price_promotion: 90,
+  },
+  { id: 4, ean: 4, name: "D", price: 15 },
+  { id: 5, ean: 5, name: "E", price: 10 },
+  { id: 6, ean: 6, name: "F", price: 9 },
+  { id: 7, ean: 7, name: "G", price: 8 },
+  { id: 8, ean: 8, name: "H", price: 7 },
+];
