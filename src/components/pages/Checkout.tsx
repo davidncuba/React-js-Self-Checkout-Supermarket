@@ -15,6 +15,7 @@ import {
 import { useContext, useState } from "react";
 import { ProductContextType, IProductsSell } from "../../@types/products";
 import { ProductContext } from "../../contexts/ProductsContext";
+import { convertPenceToPounds } from "../PenceToPounds";
 import { SnackBar } from "../SnackBar";
 
 export const Checkout = () => {
@@ -57,9 +58,8 @@ export const Checkout = () => {
                 product[0].price_promotion;
 
               productCheckout[0].discount += discountProduct;
-              productCheckout[0].price_total =
-                productCheckout[0].qtd * productCheckout[0].price -
-                discountProduct;
+              productCheckout[0].price_total +=
+                productCheckout[0].price - discountProduct;
               setDiscount(discount + discountProduct);
               setTotal(total + product[0].price - discountProduct);
             } else {
@@ -75,7 +75,6 @@ export const Checkout = () => {
               productCheckout[0].qtd * productCheckout[0].price;
           }
           setSubTotal(subTotal + productCheckout[0].price);
-          // setProductAddCheckout([...productAddCheckout]);
         } else {
           const newProductAdd = Object.assign(product[0], {
             qtd: 1,
@@ -147,23 +146,35 @@ export const Checkout = () => {
                     {product.name}
                   </TableCell>
                   <TableCell align="right">{product.qtd}</TableCell>
-                  <TableCell align="right">{product.price}</TableCell>
-                  <TableCell align="right">{product.discount}</TableCell>
-                  <TableCell align="right">{product.price_total}</TableCell>
+                  <TableCell align="right">
+                    £ {convertPenceToPounds(product.price)}
+                  </TableCell>
+                  <TableCell align="right">
+                    £ {convertPenceToPounds(product.discount)}
+                  </TableCell>
+                  <TableCell align="right">
+                    £ {convertPenceToPounds(product.price_total)}
+                  </TableCell>
                 </TableRow>
               ))}
               <TableRow>
                 <TableCell rowSpan={3} />
                 <TableCell colSpan={2}>Subtotal</TableCell>
-                <TableCell align="right">{subTotal}</TableCell>
+                <TableCell align="right">
+                  £ {convertPenceToPounds(subTotal)}
+                </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell colSpan={2}>Discount</TableCell>
-                <TableCell align="right">{discount}</TableCell>
+                <TableCell align="right">
+                  £ {convertPenceToPounds(discount)}
+                </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell colSpan={2}>Total</TableCell>
-                <TableCell align="right">{total}</TableCell>
+                <TableCell align="right">
+                  £ {convertPenceToPounds(total)}
+                </TableCell>
               </TableRow>
             </TableBody>
           </Table>

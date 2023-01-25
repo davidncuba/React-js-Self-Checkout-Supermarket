@@ -43,7 +43,7 @@ export function Welcome() {
           <Button
             variant="contained"
             component={Link}
-            to="/asd"
+            to="/checkout"
             sx={{ width: 500, height: 100, fontSize: 50 }}
           >
             START
