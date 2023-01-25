@@ -1,3 +1,39 @@
+<div align="center">
+
+# Self Checkout Supermarket 
+
+</div>
+
+<div align="center">
+
+## Screenshots
+
+</div>
+
+![Screen Shots Project](/welcome.png)
+
+![Screen Shots Project](/right_menu.png)
+
+![Screen Shots Project](/products.png)
+
+![Screen Shots Project](/checkout.png)
+
+### In this project i used React.JS and Typescript, for style i use Matherial UI, this project not have any external database. i creacte a object:
+ id: number;
+  ean: number;
+  name: string;
+  price: number;
+  qtd_promotion?: number;
+  price_promotion?: number;
+
+I prefer use a useContext to pass this object to another components.
+
+## External package:
+### Material UI
+### react-router-dom
+### react-helmet-async
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
